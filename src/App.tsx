@@ -1,5 +1,5 @@
 import { Layout, Menu, Button, Tag, Space } from 'antd'
-import { AudioOutlined, FileTextOutlined, HistoryOutlined, SaveOutlined } from '@ant-design/icons'
+import { AudioOutlined, FileTextOutlined, HistoryOutlined, SaveOutlined, SwapOutlined } from '@ant-design/icons'
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import type { AppDispatch, RootState } from './store'
@@ -8,6 +8,7 @@ import Overview from './pages/Overview'
 import ScoreEditor from './pages/ScoreEditor'
 import Parts from './pages/Parts'
 import Versions from './pages/Versions'
+import Handoff from './pages/Handoff'
 
 export default function App() {
   const location = useLocation()
@@ -17,6 +18,7 @@ export default function App() {
     { key: '/', icon: <AudioOutlined />, label: <Link to="/">作品总览</Link> },
     { key: '/score', icon: <FileTextOutlined />, label: <Link to="/score">总谱编辑</Link> },
     { key: '/parts', icon: <FileTextOutlined />, label: <Link to="/parts">分谱出版</Link> },
+    { key: '/handoff', icon: <SwapOutlined />, label: <Link to="/handoff">回传交接</Link> },
     { key: '/versions', icon: <HistoryOutlined />, label: <Link to="/versions">版本与评论</Link> },
   ]
   return (
@@ -28,7 +30,7 @@ export default function App() {
       </Layout.Sider>
       <Layout>
         <Layout.Header className="top-header"><div><b>沈青 · 室内交响作品</b><Tag style={{ marginLeft: 10 }} color={dirty ? 'orange' : 'green'}>{dirty ? '未保存修改' : '版本 v12 已保存'}</Tag></div><Space><Button>打印预览</Button><Button type="primary" icon={<SaveOutlined />} onClick={() => dispatch(saveVersion())}>形成版本</Button></Space></Layout.Header>
-        <Layout.Content><Routes><Route path="/" element={<Overview />} /><Route path="/score" element={<ScoreEditor />} /><Route path="/parts" element={<Parts />} /><Route path="/versions" element={<Versions />} /><Route path="*" element={<Navigate to="/" replace />} /></Routes></Layout.Content>
+        <Layout.Content><Routes><Route path="/" element={<Overview />} /><Route path="/score" element={<ScoreEditor />} /><Route path="/parts" element={<Parts />} /><Route path="/handoff" element={<Handoff />} /><Route path="/versions" element={<Versions />} /><Route path="*" element={<Navigate to="/" replace />} /></Routes></Layout.Content>
       </Layout>
     </Layout>
   )

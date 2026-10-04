@@ -22,3 +22,17 @@ body { margin: 0; min-width: 320px; }
 .diff-row { display:grid; grid-template-columns:90px 1fr auto; gap:12px; align-items:center; padding:11px 0; border-bottom:1px solid #edf0f5; }
 @media(max-width:1050px){.score-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}}@media(max-width:620px){.page{padding:12px}.page-head{flex-direction:column}.metrics{grid-template-columns:1fr}.part-page{padding:16px;overflow:auto}.part-measure{min-width:620px}}
 @media print{.no-print{display:none!important}.ant-layout-sider,.ant-layout-header{display:none!important}.page{padding:0;max-width:none}.part-page{border:0;box-shadow:none}}
+.handoff-part { padding: 14px 0; border-bottom: 1px solid #edf0f5; }
+.handoff-part:last-child { border-bottom: 0; }
+.handoff-part-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.handoff-candidate { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+.handoff-conflicts { display: grid; gap: 8px; margin-bottom: 8px; }
+.conflict-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 10px 12px; }
+.conflict-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.conflict-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+.conflict-side { background: #fff; border: 1px solid #fecaca; border-radius: 4px; padding: 6px 8px; font-size: 13px; }
+.conflict-side b { display: block; color: #991b1b; font-size: 12px; margin-bottom: 2px; }
+.conflict-diff { border-top: 1px dashed #fecaca; padding-top: 6px; }
+.handoff-hints { display: flex; flex-wrap: wrap; gap: 6px; }
+.write-record { font-size: 13px; }
+.muted { color: #667085; font-size: 12px; }
